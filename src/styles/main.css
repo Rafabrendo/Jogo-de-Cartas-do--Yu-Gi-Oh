@@ -91,7 +91,7 @@
 
 .card-versus__container{
     margin-top: 5rem;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
     padding-top: 0.1rem;
