@@ -66,19 +66,27 @@ async function createCardImage(IdCard, fieldSide){
     cardImage.classList.add("card");
 
     if(fieldSide === playerSides.player1){
+        //Quando eu passar o mouse por cima da carta
+        cardImage.addEventListener("mouseover", ()=>{
+            drawSelectCard(IdCard);
+        });
+
         //quando eu clicar
         cardImage.addEventListener("click", () =>{
             setCardsField(cardImage.getAttribute("data-id"))
-        })
+        });
     }
 
-    //Quando eu passar o mouse por cima da carta
-    cardImage.addEventListener("mouseover", ()=>{
-        drawSelectCard(IdCard);
-    })
+    
 
     return cardImage;
 
+}
+
+async function drawSelectCard(index){
+    state.cardSprites.avatar.src = cardData[index].img;
+    state.cardSprites.name.innerText = cardData[index].name;
+    state.cardSprites.type.innerText = "Attribute : "+ cardData[index].type;
 }
 
 async function drawCards(cardNumbers, fieldSide){
