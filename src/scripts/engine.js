@@ -205,13 +205,13 @@ async function playAudio(status){
 }
 
 function init(){
-    const bgm = document.getElementById("bgm");
-    bgm.play();
-
     ShowHiddenCardFieldsImages(false)
 
     drawCards(5, playerSides.player1);
     drawCards(5, playerSides.computer);
+
+    var bgm = document.getElementById("bgm");
+    bgm.play();
 
 }
 

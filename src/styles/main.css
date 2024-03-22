@@ -2,6 +2,8 @@
 
 body{
     cursor: url("../assets/cursor/yugicursor.png"), default;
+    overflow: hidden;
+    /* Para não fazer scroll */
 } 
 
 button, 
@@ -155,4 +157,81 @@ a:hover{
 
 .debug{
     /* border: 1px solid red; */
+}
+
+/* Media queries para tornar o layout responsivo */
+
+@media (max-width: 390px) {
+    .menu_avatar{
+        display: none;
+    }
+    .card_details{
+        display: none;
+    }
+    .bg-video .video{
+        height: 100vh;
+
+    }
+    .framed{
+        border-image-width: 10px;
+        border-width: 0px;
+        padding: 6px
+    }
+    .card {
+        transition: transform 0.2s;
+        height: 90px;
+        
+    }
+    .card-box{
+        height: 7rem;
+    }
+    .card-box__container{
+        height: 68vh;
+        display: flex;
+        justify-content: center;
+        
+    }
+    .container {
+        flex-direction: column;
+        justify-content: flex-start;
+        
+    }
+
+    .container__left {
+        width: 35%;
+        max-width: none;
+    }
+
+    .container__right {
+        width: 65%;
+        margin: 37px 0 0px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+   
+
+    .container {
+        flex-direction: row;
+    }
+
+    .container__left {
+        width: 35%;
+        max-width: none;
+    }
+
+    .container__right {
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .container__left,
+    .container__right {
+        width: 100%;
+    }
+
+    .card-infield {
+        width: calc(50% - 1rem);
+    }
 }
